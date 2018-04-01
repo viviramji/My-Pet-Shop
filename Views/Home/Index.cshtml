@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
+
+<style>
+    #base{
+        padding-top: 10px;
+    }
+</style>
+
+<div id="base" class="container">
+    <h1>Welcome to my pet shop</h1>
+
+    <h3>Choose an option</h3>
+
+    <ul>
+        <li> <a asp-area="" asp-action="AddPetForm" asp-controller="Home">Add a pet</a></li>
+        <li> <a asp-area="" asp-action="ListPets" asp-controller="Home">List of Pets</a></li>
+    </ul>
+</div>

@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Add a Pet";
+}
+
+<script type="text/javascript" >
+        $("#buttonID").live('click', function (event) {
+            alert($("#foo option:selected").val());
+        });
+</script>
+
+<div class="container">
+    <h2>@ViewData["Title"]</h2>
+    <h3>@ViewData["Message"]</h3>
+
+    <div class="container">
+        @using (Html.BeginForm("AddPetToDB", "Home", FormMethod.Post))
+    {
+        <div class="form-group">
+            <label for="name">Name's pet</label>
+            <input type="text" name="name" class="form-control" placeholder="Firulais" required>
+        </div>
+        <div class="form-group">
+            <label for="owner">Name's owner</label>
+            <input type="text" name="owner" class="form-control" placeholder="Jhon Smith" required>
+        </div>
+
+        <div class="form-group">
+            <div class="form-group">
+                <label for="sex">Sex's Pet</label>
+                <input type="text" name="sex" class="form-control" placeholder="M or F" maxlength="1" required>
+            </div>
+            <!--
+        <label for="">Sex</label>
+        <select class="custom-select" id="selectFoo">
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+        </select>-->
+        </div>
+        <div class="form-group">
+            <div class="form-group">
+                <label for="type">type</label>
+                <input type="text" name="type" class="form-control" placeholder="1" maxlength="1" required>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-default" id="submit" onclick="location.href='@Url.Action("AddPetToDB","Home")'">Save it</button>
+}
+    </div>
+
+</div>
